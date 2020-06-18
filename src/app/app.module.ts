@@ -30,11 +30,10 @@ import { NavComponent } from './componentes/nav/nav.component';
     RutasRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    BrowserAnimationsModule,
-    AngularFireAuth,
+    BrowserAnimationsModule,    
     AngularFireStorageModule
   ],
-  providers: [ServiceService],
+  providers: [ServiceService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
