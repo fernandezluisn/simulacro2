@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Materia } from 'src/app/clases/Materia';
 import { BdaService } from 'src/app/servicio/bda.service';
-import { element } from 'protractor';
-import { newArray } from '@angular/compiler/src/util';
+
 
 @Component({
   selector: 'app-detalle-materia',
