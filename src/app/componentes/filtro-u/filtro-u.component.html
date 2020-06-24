@@ -1,0 +1,11 @@
+<div class="form-group">
+    <label >Tipo de usuario</label>
+    <select [(ngModel)]="tipoU" class="form-control" style="width: 12rem;" name="SelectEsp">
+        <option value=Todos>Todos</option>
+      <option value=Alumno>Alumno</option>
+      <option value=Docente>Docente</option>
+      <option value=Administrador>Administrador</option>          
+    </select>        
+  </div>
+
+  <button (click)="filtrar(tipoU)">Filtrar</button>

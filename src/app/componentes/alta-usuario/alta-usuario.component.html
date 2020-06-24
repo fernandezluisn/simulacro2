@@ -1,1 +1,44 @@
-<p>alta-usuario works!</p>
+<app-nav></app-nav>
+
+<form (ngSubmit)="registrar()">
+  
+  
+  
+  <div class="form-group">
+        
+    <input [(ngModel)]="nombre" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Nombre y apellido del usuario" [ngModelOptions]="{standalone: true}">
+    
+  </div>
+    <div class="form-group">
+        
+        <input [(ngModel)]="email" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Email" [ngModelOptions]="{standalone: true}">
+        
+      </div>
+      <div class="form-group">
+        
+        <input [(ngModel)]="clave1" type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su Password" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        
+        <input [(ngModel)]="clave2" type="password" class="form-control"  placeholder="Ingrese nuevamente el Password" name="pass2">
+      </div>
+     
+   
+    
+      <div class="form-group">
+        <label >Tipo de usuario</label>
+        <select [(ngModel)]="tipoU" class="form-control" style="width: 12rem;" name="SelectEsp">
+          <option value=Alumno>Alumno</option>
+          <option value=Docente>Docente</option>
+          <option value=Administrador>Administrador</option>          
+        </select>        
+      </div>
+
+      
+<br><br>     
+      
+      
+
+      <button type="submit" class="btn btn-primary">Registrarse</button>
+
+</form>

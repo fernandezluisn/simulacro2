@@ -1,0 +1,22 @@
+
+
+<table class="table">
+
+    <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Cuatrimestre</th>
+          <th scope="col">Cupo</th>
+          <th scope="col"> imagen</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let materia of listaMaterias" (click)="evento(materia)">
+          <td scope="row" >{{materia.nombre}}</td>
+          <td scope="row" >{{materia.cuatri}}</td>
+          <td scope="row" >{{materia.cupo}}</td>
+          <td scope="row" ><img style="height: 3rem;"  src="{{materia.url}}" alt=""></td>
+        </tr>       
+      </tbody>
+</table>

@@ -1,0 +1,42 @@
+<form (ngSubmit)="registrarMateria()" style="width: 40rem;">
+  
+  
+  
+  
+    <div class="form-group">
+        <h1>Alta Materia</h1>
+        <input [(ngModel)]="nombreM" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="nombre de la materia" [ngModelOptions]="{standalone: true}">
+        
+      </div>
+      <div class="form-group">            
+        <input [(ngModel)]="cuatrimestre" type="text" class="form-control" id="exampleInputPassword1" placeholder="cuatrimestre" [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <div class="form-group"> 
+          <label for="cupos">Cupo de la materia</label>           
+        <input [(ngModel)]="cupos" type="number" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone: true}">
+      </div>
+      
+     
+   <div class="form-group">
+       <label for="">Seleccione docente titular de la materia de la tabla.</label><br>
+       <div *ngIf="haydoc"><h3 >{{docente.nombre}}</h3></div>
+   </div>
+    
+   <div class="form-group">
+    <h5>Agregar imagen de la materia</h5>
+    <input type="file" accept=".png, .jpg" (change)="imagen1($event)">
+    
+</div>
+<div class="progress" style="margin-left: 10%; margin-right: 10%; width: 25rem;">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent1 | async) +'%'"></div>
+</div>
+
+      
+<br><br>     
+      
+      
+
+      <button type="submit" class="btn btn-primary">Alta materia</button>
+
+</form>

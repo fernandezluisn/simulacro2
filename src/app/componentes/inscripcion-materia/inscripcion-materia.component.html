@@ -1,0 +1,17 @@
+<h2>Seleccione materia para inscribirse</h2>
+
+
+
+
+<div class="form-group">
+   
+    <select [(ngModel)]="nombre" class="form-control" style="width: 12rem;" name="SelectEsp">
+        <option *ngFor="let materia of listaMaterias" 
+        [value]=materia.nombre
+        >
+      {{materia.nombre}}
+    </option>   
+    </select>        
+  </div>
+
+  <button (click)="inscribir()">Inscribirse</button>

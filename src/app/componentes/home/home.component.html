@@ -1,0 +1,83 @@
+<app-nav></app-nav>
+
+<h1>Bienvenido {{userR.tipo}}</h1>
+
+    
+
+
+    <div *ngIf="tipoAdmin" >
+        <ul class="nav nav-tabs" style="background-color: rgb(233, 219, 219);">
+        <li class="active" (click)="cambiarP()" style="margin-left: 1rem; ">Alta Materia</li>
+        <li (click)="cambiarE()" style="margin-left: 1rem; ">Listado materias</li>
+        <li (click)="cambiarU()" style="margin-left: 1rem; ">Listado usuarios</li>
+        
+      </ul>
+        <div *ngIf="alta" style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
+            
+                <div style="width: 30rem; margin-left: 5%;">
+                <app-alta-materia [docente]="docenteSeleccionado" [haydoc]="seleccion"></app-alta-materia>
+                </div>
+
+                 <div style="width: 30 rem; margin-right: 10%;">
+                 <app-tabla-profesores (mate)="tomarDocenteParaDetalles($event)"></app-tabla-profesores>
+                 </div>
+         </div>
+
+         
+         <div *ngIf="doc" style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
+          <div style="width: 30rem; margin-left: 5%;">
+          <app-tabla-materias [listaMaterias]="listaMaterias" (mateElegida)="tomarMateriaParaDetalles($event)"></app-tabla-materias>
+          </div>           
+          <div *ngIf="seleccion" style="margin-right: 10%;">
+            <app-detalle-materia [materia]="materiaS"></app-detalle-materia>
+          </div>
+          
+         
+
+      </div>
+
+         <div *ngIf="usu" style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
+            <div style="width: 30rem; margin-left: 5%;">
+            <app-tabla-usuarios [listaUsuarios]="listaUsuarios"></app-tabla-usuarios>
+            </div> 
+            
+            
+            <div style="width: 30rem; margin-left: 5%; margin-right: 5%;">
+              <app-filtro-u (filtro)="tomarFiltroParaDetalles($event)"></app-filtro-u>
+            </div>
+
+        </div>
+        
+    </div> 
+
+    <div *ngIf="tipoAlum">
+      
+      <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; margin-top:2rem">
+        <div style="margin-left: 5%;">
+          <app-inscripcion-materia></app-inscripcion-materia>  
+
+        </div>
+        <div style="margin-right: 10%;">
+          <app-tabla-inscripciones [listaInscripciones]="listaBI"></app-tabla-inscripciones>
+        </div>
+              
+      </div>
+
+    
+    </div>
+
+    <div *ngIf="tipoDoc" style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; margin-top:2rem">
+      <DIV>
+        <h2>Materias a cargo.</h2>
+        <app-tabla-materias [listaMaterias]="listaMateriasFiltrado"></app-tabla-materias>
+      </DIV>
+      <div>
+       
+          <app-tabla-usuarios [listaUsuarios]="listaAlumnosInscriptos"></app-tabla-usuarios>
+        
+      </div>
+
+    </div>
+  
+
+

@@ -2,8 +2,11 @@
     <div class="navbar-nav-scroll" style="width: 40%;">
       <a class="navbar-brand" routerLink='/'>Inicio</a>
       <a class="navbar-brand" routerLink='/login'>Login</a>
-     
-      <button style="margin-left: 40%;" class="btn btn-secondary" *ngIf="!logeado" (click)="cerrar()">Cerrar sesión</button>
+      <a class="navbar-brand" routerLink='/alta'>Registrarse</a>
+      <a class="navbar-brand" routerLink='/home'>Usuario</a>  
+      
+      <a *ngIf="logeado">{{user.email}}</a>
+      <button  class="btn btn-secondary" *ngIf="logeado" (click)="cerrar()">Cerrar sesión</button>
       
      
       

@@ -28,4 +28,14 @@ export class ServiceService {
   logOutUser(){
     return this.afAuth.signOut();
   }
+
+  registrarUsuario(mail:string, password: string){
+    return new Promise((resolve, reject)=>{
+      this.afAuth.createUserWithEmailAndPassword(mail, password)
+      .then(userData=>resolve(userData)),
+      err=>reject(err);  
+      
+    });
+    
+  }
 }
